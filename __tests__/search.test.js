@@ -15,4 +15,9 @@ describe('search', () => {
     test('search in empty docs', () => {
         expect(search([], 'fdsfasdfsadf')).toEqual([]);
     })
+
+    test('search when there are punctuation marks', () => {
+        expect(search([docs[0]], 'pint!')).toEqual(['doc1'])
+        expect(search([docs[0]], 'pint')).toEqual(['doc1'])
+    })
 })
